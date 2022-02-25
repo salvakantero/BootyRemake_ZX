@@ -37,12 +37,12 @@ A fall from one floor above or more will make you lose your life.
 
 GAME CONTROLS:
 
-Setting 1	Setting 2
+Setting 1   Setting 2
 ---------   ---------
-Q = up 	W = up
-A = down 	S = down
-O = left 	A = left
-P = right	D = right
+Q = up      W = up
+A = down    S = down
+O = left    A = left
+P = right   D = right
 
 SPC = open door
 M = music ON/OFF
@@ -52,10 +52,10 @@ X = finish
 Booty. The Remake
 Copyleft (C) 2019
 
-SalvaKantero:	Program and graphics
-Davidian:		Music
-Masterklown:	Tape cover and manual pictures
-Dany Cantero:	Translations
+SalvaKantero:     Program and graphics
+Davidian:         Music
+Masterklown:      Tape cover and manual pictures
+Dany Cantero:     Translations
 
 
 THANKS:

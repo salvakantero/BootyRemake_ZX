@@ -1,3 +1,4 @@
+
  ==================
  Booty - The Remake
  ==================
@@ -51,10 +52,10 @@ X = terminar
 Booty. The Remake
 Copyleft (C) 2019
 
-SalvaKantero:	Programa y gráficos
-Davidian:		Música
-Masterklown:	Ilustraciones para la carátula y el manual
-Dany Cantero:	Traducciones
+SalvaKantero:     Programa y gráficos
+Davidian:         Música
+Masterklown:      Ilustraciones para la carátula y el manual
+Dany Cantero:     Traducciones
 
 
 Agradecimientos:
@@ -65,3 +66,4 @@ Agradecimientos:
 ● A IvanZX, por hacer posible un año más la compo ZXDev…
 
 ...A Lourdes, por no arrojarme por la borda tras soportar estoicamente a mis piratas durante meses.
+
