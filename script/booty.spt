@@ -1,0 +1,634 @@
+# Booty - The remake
+# Copyleft 2018 salvaKantero
+# Engine MK2 0.89 by The Mojon Twins
+
+# Flags:
+# 1 - número de llave en uso
+# 2 - número de objetos recogidos
+# 3 - =1 evita que regresemos de nuevo si hay otra puerta en la misma posición en la nueva pantalla.
+
+
+
+#ENTERING SCREEN 0
+#	IF TRUE
+#	THEN
+#		WARP_TO 13, 8, 3
+#	END
+#END
+
+
+
+ENTERING SCREEN 5
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  9,  8, 36
+			 10,  8, 36
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 8
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  4,  8, 36
+			 10,  8, 36
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 9
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  3,  8, 36
+			  4,  8, 36
+			  5,  8, 36
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 10
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  3,  3, 29
+			 10,  3, 29
+			  3,  2, 30
+			 10,  2, 30
+			  5,  8, 36
+			  6,  8, 36
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 11
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  4,  8, 36
+			  9,  8, 36
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 13
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  1,  8, 36
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 15
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  2,  3, 29
+			  4,  3, 29
+			  6,  3, 29
+			  8,  3, 29
+			 10,  3, 29
+			 12,  3, 29
+			  2,  2, 30
+			  4,  2, 30
+			  6,  2, 30
+			  8,  2, 30
+			 10,  2, 30
+			 12,  2, 30			 
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 16
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  2,  8, 36
+			  6,  8, 36
+			 11,  8, 36
+		END
+	END
+END
+
+
+
+ENTERING SCREEN 17
+	IF TRUE 
+	THEN
+		DECORATIONS
+			  8,  8, 36
+			  9,  8, 36
+			 10,  8, 36
+		END
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 0
+	# Puerta "A"
+	IF PLAYER_TOUCHES 13, 1
+	THEN
+		SOUND 1
+		SET FLAG 3 = 1
+		WARP_TO 1,12, 1
+	END
+
+	# Puerta "L"
+	IF PLAYER_TOUCHES 1, 5
+	THEN
+		SOUND 1
+		WARP_TO 12, 1, 5
+	END
+
+	# Puerta "D"
+	IF PLAYER_TOUCHES 14, 7
+	THEN
+		SOUND 1
+		WARP_TO 4,14, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 1
+	# Puerta "A"
+	IF PLAYER_TOUCHES 12, 1
+	IF FLAG 3 = 0
+	THEN
+		SOUND 1
+		WARP_TO 0,13, 1
+	END
+
+	# Puerta "B"
+	IF PLAYER_TOUCHES 11, 3
+	IF FLAG 3 = 0
+	THEN
+		SOUND 1
+		WARP_TO 2,12, 3
+	END
+
+	# Puerta "2"
+	IF PLAYER_TOUCHES 8, 7
+	IF FLAG 3 = 0
+	THEN
+		SOUND 1
+		WARP_TO 9, 7, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 2
+	# Puerta "B"
+	IF PLAYER_TOUCHES 12, 3
+	THEN
+		SOUND 1
+		SET FLAG 3 = 1
+		WARP_TO 1,11, 3
+	END
+
+	# Puerta "C"
+	IF PLAYER_TOUCHES 8, 3
+	THEN
+		SOUND 1
+		WARP_TO 3, 8, 3
+	END
+
+	# Puerta "H"
+	IF PLAYER_TOUCHES 2, 7
+	THEN
+		SOUND 1
+		WARP_TO 8, 1, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 3
+	# Puerta "I"
+	IF PLAYER_TOUCHES 0, 1
+	THEN
+		SOUND 1
+		WARP_TO 9, 2, 1
+	END
+
+	# Puerta J"
+	IF PLAYER_TOUCHES 13, 1
+	THEN
+		SOUND 1
+		WARP_TO 10, 13, 1
+	END
+
+	# Puerta "C"
+	IF PLAYER_TOUCHES 8, 3
+	THEN
+		SOUND 1
+		WARP_TO 2, 8, 3
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 4
+	# Puerta "4"
+	IF PLAYER_TOUCHES 8, 1
+	THEN
+		SOUND 1
+		WARP_TO 19, 8, 1
+	END
+	
+	# Puerta "E"
+	IF PLAYER_TOUCHES 1, 3
+	THEN
+		SOUND 1
+		WARP_TO 5, 1, 3
+	END
+
+	# Puerta "D"
+	IF PLAYER_TOUCHES 14, 7
+	THEN
+		SOUND 1
+		WARP_TO 0,14, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 5
+	# Puerta "E"
+	IF PLAYER_TOUCHES 1, 3
+	THEN
+		SOUND 1
+		WARP_TO 4, 1, 3
+	END
+	
+	# Puerta "F"
+	IF PLAYER_TOUCHES 14, 3
+	THEN
+		SOUND 1
+		WARP_TO 6, 14, 3
+	END
+
+	# Puerta "Y"
+	IF PLAYER_TOUCHES 7, 7
+	THEN
+		SOUND 1
+		WARP_TO 7, 9, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 6
+	# Puerta "G"
+	IF PLAYER_TOUCHES 8, 3
+	THEN
+		SOUND 1
+		WARP_TO 7, 9, 3
+	END
+	
+	# Puerta "F"
+	IF PLAYER_TOUCHES 14, 3
+	THEN
+		SOUND 1
+		WARP_TO 5, 14, 3
+	END
+
+	# Puerta "Z"
+	IF PLAYER_TOUCHES 2, 5
+	THEN
+		SOUND 1
+		WARP_TO 11, 2, 5
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 7
+	# Puerta "O"
+	IF PLAYER_TOUCHES 3, 3
+	THEN
+		SOUND 1
+		WARP_TO 14, 3, 3
+	END
+	
+	# Puerta "G"
+	IF PLAYER_TOUCHES 9, 3
+	THEN
+		SOUND 1
+		WARP_TO 6, 8, 3
+	END
+
+	# Puerta "Y"
+	IF PLAYER_TOUCHES 9, 7
+	THEN
+		SOUND 1
+		WARP_TO 5, 7, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 8
+	# Puerta "V"
+	IF PLAYER_TOUCHES 8, 1
+	THEN
+		SOUND 1
+		WARP_TO 15, 8, 1
+	END
+
+	# Puerta "W"
+	IF PLAYER_TOUCHES 13, 5
+	THEN
+		SOUND 1
+		WARP_TO 18, 13, 5
+	END
+
+	# Puerta "H"
+	IF PLAYER_TOUCHES 1, 7
+	THEN
+		SOUND 1
+		WARP_TO 2, 2, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 9
+	# Puerta "3"
+	IF PLAYER_TOUCHES 13, 3
+	THEN
+		SOUND 1
+		WARP_TO 19, 13, 3
+	END
+
+	# Puerta "2"
+	IF PLAYER_TOUCHES 7, 7
+	THEN
+		SOUND 1
+		SET FLAG 3 = 1
+		WARP_TO 1, 8, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 10
+	# Puerta "J"
+	IF PLAYER_TOUCHES 13, 1
+	THEN
+		SOUND 1
+		WARP_TO 3, 13, 1
+	END
+
+	# Puerta "K"
+	IF PLAYER_TOUCHES 1, 3
+	THEN
+		SOUND 1
+		WARP_TO 11, 1, 3
+	END
+
+	# Puerta "1"
+	IF PLAYER_TOUCHES 3, 7
+	THEN
+		SOUND 1
+		WARP_TO 19, 3, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 11
+	# Puerta "K"
+	IF PLAYER_TOUCHES 1, 3
+	THEN
+		SOUND 1
+		WARP_TO 10, 1, 3
+	END
+
+	# Puerta "Z"
+	IF PLAYER_TOUCHES 2, 5
+	THEN
+		SOUND 1
+		WARP_TO 6, 2, 5
+	END
+
+	# Puerta "T"
+	IF PLAYER_TOUCHES 13, 7
+	THEN
+		SOUND 1
+		WARP_TO 17, 13, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 12
+	# Puerta "M"
+	IF PLAYER_TOUCHES 13, 1
+	THEN
+		SOUND 1
+		WARP_TO 13, 13, 1
+	END
+
+		# Puerta "U"
+	IF PLAYER_TOUCHES 4, 3
+	THEN
+		SOUND 1
+		WARP_TO 16, 4, 3
+	END
+
+	# Puerta "L"
+	IF PLAYER_TOUCHES 1, 5
+	THEN
+		SOUND 1
+		WARP_TO 0, 1, 5
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 13
+	# Puerta "M"
+	IF PLAYER_TOUCHES 13, 1
+	THEN
+		SOUND 1
+		WARP_TO 12, 13, 1
+	END
+
+	# Puerta "N"
+	IF PLAYER_TOUCHES 12, 7
+	THEN
+		SOUND 1
+		WARP_TO 14, 12, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 14
+	# Puerta "O"
+	IF PLAYER_TOUCHES 3, 3
+	THEN
+		SOUND 1
+		WARP_TO 7, 3, 3
+	END
+
+	# Puerta "P"
+	IF PLAYER_TOUCHES 2, 5
+	THEN
+		SOUND 1
+		WARP_TO 15, 2, 5
+	END
+
+	# Puerta "N"
+	IF PLAYER_TOUCHES 12, 7
+	THEN
+		SOUND 1
+		WARP_TO 13, 12, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 15
+	# Puerta "V"
+	IF PLAYER_TOUCHES 8, 1
+	THEN
+		SOUND 1
+		WARP_TO 8, 8, 1
+	END
+
+		# Puerta "P"
+	IF PLAYER_TOUCHES 2, 5
+	THEN
+		SOUND 1
+		WARP_TO 14, 2, 5
+	END
+
+	# Puerta "Q"
+	IF PLAYER_TOUCHES 13, 7
+	THEN
+		SOUND 1
+		WARP_TO 16, 13, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 16
+	# Puerta "R"
+	IF PLAYER_TOUCHES 1, 1
+	THEN
+		SOUND 1
+		WARP_TO 17, 1, 1
+	END
+
+	# Puerta "U"
+	IF PLAYER_TOUCHES 4, 3
+	THEN
+		SOUND 1
+		WARP_TO 12, 4, 3
+	END
+
+	# Puerta "Q"
+	IF PLAYER_TOUCHES 13, 7
+	THEN
+		SOUND 1
+		WARP_TO 15, 13, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 17
+	# Puerta "R"
+	IF PLAYER_TOUCHES 1, 1
+	THEN
+		SOUND 1
+		WARP_TO 16, 1, 1
+	END
+
+		# Puerta "S"
+	IF PLAYER_TOUCHES 5, 7
+	THEN
+		SOUND 1
+		WARP_TO 18, 5, 7
+	END
+
+	# Puerta "T"
+	IF PLAYER_TOUCHES 13, 7
+	THEN
+		SOUND 1
+		WARP_TO 11, 13, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 18
+	# Puerta "X"
+	IF PLAYER_TOUCHES 1, 3
+	THEN
+		SOUND 1
+		WARP_TO 13, 0, 3
+	END
+
+		# Puerta "W"
+	IF PLAYER_TOUCHES 13, 5
+	THEN
+		SOUND 1
+		WARP_TO 8, 13, 5
+	END
+
+	# Puerta "S"
+	IF PLAYER_TOUCHES 5, 7
+	THEN
+		SOUND 1
+		WARP_TO 17, 5, 7
+	END
+END
+
+
+
+PRESS_FIRE AT SCREEN 19
+	# Puerta "4"
+	IF PLAYER_TOUCHES 8, 1
+	THEN
+		SOUND 1
+		WARP_TO 4, 8, 1
+	END
+
+	# Puerta "3"
+	IF PLAYER_TOUCHES 13, 3
+	THEN
+		SOUND 1
+		WARP_TO 9, 13, 3
+	END
+
+	# Puerta "1"
+	IF PLAYER_TOUCHES 3, 7
+	THEN
+		SOUND 1
+		WARP_TO 10, 3, 7
+	END
+END
+

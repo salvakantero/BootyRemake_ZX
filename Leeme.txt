@@ -1,0 +1,67 @@
+ ==================
+ Booty - The Remake
+ ==================
+  ZX Spectrum 128k
+(C) salvaKantero 2019
+
+Jim el grumete quiere aprovechar la estancia de su barco en Port Royal para cumplir con sus propios planes de futuro.
+Ni corto ni perezoso se dispone a quedarse con las 125 piezas del tesoro que hay repartido por las bodegas del galeón y huir tan lejos como le sea posible.
+La misión no es fácil. El barco está repleto de piratas que vigilan el botín con disciplina militar.
+Las ratas tampoco están de nuestra parte, y el loro del capitán suele aparecer en los momentos más inoportunos.
+Para colmo las bodegas del galeón conforman un laberinto de puertas y estancias donde es muy fácil perderse o caer al vacío.
+
+
+COMO JUGAR:
+
+Las bodegas del galeón se componen de 20 pantallas.
+Para avanzar por ellas y alcanzar las piezas del botín hay que abrir cada puerta numerada con su respectiva llave.
+Solo podemos llevar una llave a la vez.
+Para cambiar entre pantallas usaremos las puertas frontales.
+El juego finaliza cuando consigamos limpiar todas las pantallas de tesoros, un total de 125 piezas.
+
+
+CONSEJOS Y TRUCOS:
+
+✔ Los aventureros que de verdad quieran conseguir el tesoro deberían hacerse un mapa, o usar alguno de los que se encuentran en internet del juego original de 1984.
+
+✔ Para no dejarse atrás ninguna pieza del botín, lo ideal es limpiar cada pantalla por completo antes de pasar a otra, si bien muchas pantallas requieren reentrar desde otras puertas para recoger todos sus tesoros.
+
+✔ Un buen lugar donde refugiarse de los enemigos en situaciones comprometidas es agazapado en mitad de las escaleras.
+
+✔ Cuidado al abrir todas las puertas de un pasillo, a partir de ese momento pueden aparecer ratas o el loro del capitán.
+
+✔ No es recomendable saltar a las plataformas móviles verticales cuando van hacia abajo, una caída de un piso de altura o más te hará perder una vida.
+
+
+CONTROLES DE JUEGO :
+
+Configuración 1	Configuración 2
+---------------   ---------------
+Q = arriba        W = arriba
+A = abajo         S = abajo
+O = izquierda     A = izquierda
+P = derecha       D = derecha
+
+SPC = usar puerta
+M = música SI/NO
+X = terminar
+
+
+
+Booty. The Remake
+Copyleft (C) 2019
+
+SalvaKantero:	Programa y gráficos
+Davidian:		Música
+Masterklown:	Ilustraciones para la carátula y el manual
+Dany Cantero:	Traducciones
+
+
+Agradecimientos:
+
+● A Mojon Twins por liberar su genial motor de juegos MK/2, con el que se ha realizado gran parte de este programa.
+● A los compañeros de PlayOnRetro, GreenWeb Sevilla, Utopian, y muchos otros colegas por su apoyo técnico y ánimos.
+● A Javi Ortiz por dar a conocer el juego en su canal “El Spectrumero”.
+● A IvanZX, por hacer posible un año más la compo ZXDev…
+
+...A Lourdes, por no arrojarme por la borda tras soportar estoicamente a mis piratas durante meses.

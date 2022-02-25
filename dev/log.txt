@@ -1,0 +1,284 @@
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem @echo off 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem set here the game name (used in filenames) 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>SET game=espadewr 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo    BUILDING espadewr 
+   BUILDING espadewr
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ## LEVELS 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem we will delegate on makelevels.bat - if your game supports several levels,etc 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem echo ### BUILDING LEVELS 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem cd ..\levels 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem call makelevels.bat 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem but for 48K/single level games...  
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING MAPS ### 
+### MAKING MAPS ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem the "Force" parameter is to force 16 tiles maps even if the actual map data 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem has more tan 16 tiles. Extra tiles are written to extra.spt. Me have to move 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem that file to the script folder. 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\map2bin.exe ..\map\mapa.map 3 3 99 map.bin bolts.bin force 
+reading map...
+    map filename = ..\map\mapa.map
+    width in tiles = 45
+    height in tiles = 30
+    Tile(s) > 15 found, but you said 'force'
+    total bytes read = 1350
+    packed map detected (16 tiles).
+    0 bolts found.
+writing map...
+    675 bytes written.
+    Out of range tiles written to extra.spt
+writing bolts...
+    128 bytes written.
+
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>move extra.spt ..\script 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING ENEMS ### 
+### MAKING ENEMS ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\ene2bin.exe 3 6 1 ..\enems\enems.ene enems.bin hotspots.bin 
+reading enems file
+    enems filename = ..\enems\enems.ene
+    reading 54 enemies
+    written 54 enemies
+    648 bytes written.
+    reading 18 hotspots
+    54 bytes written.
+
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING TILESET ### 
+### MAKING TILESET ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\ts2bin.exe ..\gfx\font.png ..\gfx\work.png ts.bin 
+reading font
+    font filename = ..\gfx\font.png
+    converted 64 chars
+reading 16x16 tiles
+    tileset filename = ..\gfx\work.png
+    converted 192 chars
+writing tileset
+    2304 bytes written
+
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING SPRITESET ### 
+### MAKING SPRITESET ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\sprcnv.exe ..\gfx\sprites.png sprites.h 
+** WARNING **
+   SprCnv convierte los sprites en un PNG en formato churrera
+   código C usable directamente en el juego.
+   CutreCode Disclaimer: este programa es cutrecode, esto significa
+   que si el PNG de entrada no tiene el formato churrera especificado
+   en la documentación, cosas divertidas pueden ocurrir.
+
+¡Todo correcto!
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem If you use arrows and/or drops this will make the sprites binary: 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ..\utils\spg2bin.exe ..\gfx\drop.png spdrop.bin 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ..\utils\spg2bin.exe ..\gfx\arrow.png sparrow.bin 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ## GAME TEXT 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem Each line in text.txt contains a text string for the game. 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem textstuffer.exe will compress and pack all text strings in 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem a binary file called texts.bin. The parameter "24" define how 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem many chars per line. Word wrapping is automatic. 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING TEXTS ### 
+### MAKING TEXTS ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>cd ..\texts 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>..\utils\textstuffer.exe texts.txt texts.bin 24 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>rem ## GAME SCRIPT 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>rem The game script is compiled by msc3.exe. For 128K games use "rampage" at 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>rem the end so the script compiler generates code to stuff everything in 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>rem extra pages; the second parameter is the # of screens in your game. 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>rem i.e. "msc3.exe ninjajar.spt 21 rampage 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>echo ### MAKING SCRIPT ### 
+### MAKING SCRIPT ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\texts>cd ..\script 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>..\utils\msc3.exe espadewr.spt 16 
+Parsing espadewr.spt
+Scripts for 1 levels read and compiled into scripts.bin
+Generating parser
+DONE!
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>rem If scripts and texts are going to share the same RAM page, use this line 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>rem (for 128K games) 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>rem This calculates an offset for the scripts binary automaticly. 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>rem ..\utils\sizeof.exe ..\bin\texts.bin 49152 "#define SCRIPT_INIT" >> msc-config.h 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>copy msc.h ..\dev 
+        1 archivos copiados.
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>copy msc-config.h ..\dev 
+        1 archivos copiados.
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\script>cd ..\dev 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem For 128K games with text + script sharing the same page, use this to 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem bundle both binaries... 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem echo ### BUNDLING TEXT + SCRIPT ### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem copy /b ..\texts\texts.bin + ..\script\script.bin ..\bin\preload4.bin 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ## FIXED SCREENS 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING FIXED ### 
+### MAKING FIXED ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\png2scr.exe ..\gfx\title.png ..\gfx\title.scr 
+Reading input png
+    input filename = ..\gfx\title.png
+Reading colour pairs
+Examining and reordering bitmap
+Adding attribute file
+Writing output
+    output filename = ..\gfx\title.scr
+    6912 bytes written
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\apack.exe ..\gfx\title.scr title.bin 
+===============================================================================
+aPLib example                   Copyright (c) 1998-2004 by Joergen Ibsen / Jibz
+                                                            All Rights Reserved
+
+                                                  http://www.ibsensoftware.com/
+===============================================================================
+
+compressed 4939 -> 373 bytes (71% done)compressed 6912 -> 645 bytes (100% done)compressed 6912 -> 645 bytes (9%) in 0.00 seconds
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\png2scr.exe ..\gfx\ending.png ..\gfx\ending.scr 1 
+Reading input png
+    input filename = ..\gfx\ending.png
+Reading colour pairs
+Examining and reordering bitmap
+Writing output
+    output filename = ..\gfx\ending.scr
+    2048 bytes written
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\apack.exe ..\gfx\ending.scr ending.bin 
+===============================================================================
+aPLib example                   Copyright (c) 1998-2004 by Joergen Ibsen / Jibz
+                                                            All Rights Reserved
+
+                                                  http://www.ibsensoftware.com/
+===============================================================================
+
+compressed 2048 -> 7 bytes (100% done)compressed 2048 -> 7 bytes (0%) in 0.00 seconds
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>del ..\gfx\*.scr 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING LOADING 
+### MAKING LOADING
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\png2scr.exe ..\gfx\loading.png loading.bin 
+Reading input png
+    input filename = ..\gfx\loading.png
+Reading colour pairs
+Examining and reordering bitmap
+Adding attribute file
+Writing output
+    output filename = loading.bin
+    6912 bytes written
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ## COMPILATION AND TAPE BUILDING 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>rem ########################################################################### 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### COMPILING ### 
+### COMPILING ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>zcc +zx -vn espadewr.c -o espadewr.bin -lsplib2 -zorg=24200 
+        1 archivos copiados.
+        1 archivos copiados.
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### MAKING TAPS ### 
+### MAKING TAPS ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\bas2tap -a10 -sFINAL loader.bas loader.tap 
+
+BAS2TAP v2.5 by Martijn van der Heide of ThunderWare Research Center
+
+Creating output file loader.tap
+Converting line    1 ->   10                                     Done! Listing contains 1 line.
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\bin2tap -o loading.tap -a 16384 loading.bin 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>..\utils\bin2tap -o main.tap -a 24200 espadewr.bin 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>copy /b loader.tap + loading.tap + main.tap espadewr.tap 
+loader.tap
+loading.tap
+main.tap
+        1 archivos copiados.
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### LIMPIANDO ### 
+### LIMPIANDO ###
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>del loader.tap 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>del main.tap 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>del loading.tap 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>del espadewr.bin 
+
+K:\Google Drive\Maritrini\dev\Speccy\Churrera\Espadewr\dev>echo ### DONE ### 
+### DONE ###
