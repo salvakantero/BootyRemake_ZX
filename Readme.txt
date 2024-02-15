@@ -57,6 +57,11 @@ Davidian:         Music
 Masterklown:      Tape cover and manual pictures
 Dany Cantero:     Translations
 
+BOOTY THE REMAKE is released under GPL v2 for all software components* (see license.txt).
+* However, please note that the illustrations used for the cover artwork are NOT released under the GPL v2 license. 
+These illustrations are the intellectual property of Masterklown and are subject to separate licensing terms. 
+Any use, reproduction, or distribution of the illustrations must be authorized by Masterklown. 
+
 
 THANKS:
 
